@@ -12,8 +12,7 @@ def get_all_news():
 		cur.execute(sql)
 		res=cur.fetchall()
 		for i in res:
-			print(i)
-			content={"id":i[0],"title":i[1],"url_address":i[2],"content":i[3]}
+			content={"id":i[0],"title":i[1],"url_address":i[2],"content":i[3],"collection":i[4]}
 			data.append(content)
 	except Exception as e:
 		conn.rollback()
