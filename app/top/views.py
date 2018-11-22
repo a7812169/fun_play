@@ -12,3 +12,7 @@ def tops():
 def top_10():
     data=get_top10_funplay()
     return jsonify(make_success(data=data))
+@top.route('/get_new_by_type/<int:type>',methods=['GET'])
+def get_new_by_typ(type):
+    data=get_new_by_type(type)
+    return jsonify(make_success(data=data))
