@@ -16,3 +16,7 @@ def top_10():
 def get_new_by_typ(type):
     data=get_new_by_type(type)
     return jsonify(make_success(data=data))
+@top.route('/get_order/<name>',methods=['GET'])
+def order(name):
+    data=get_order(name)
+    return jsonify(make_success(data=data))
