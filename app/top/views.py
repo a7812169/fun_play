@@ -20,3 +20,13 @@ def get_new_by_typ(type):
 def order(name):
     data=get_order(name)
     return jsonify(make_success(data=data))
+@top.route('/get_recommend',methods=['POST'])
+def get_recommand():
+    form=dict(request.get_json())
+    count=0
+    table={"儿童":10,"水上":40,"刺激":80,"娱乐演出":30,"旋转木马":10,"花车巡游":20,"烟火秀":20,"浪漫":10,"拍照":10}
+    for i in form.keys():
+        count+=table[i]
+    get_done(count)
+    data="更新完成"
+    return jsonify(make_success(data=data))

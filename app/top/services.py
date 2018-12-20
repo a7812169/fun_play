@@ -62,3 +62,12 @@ def get_order(name):
 def back_time(time,num):
 	the_time=(datetime.datetime.now() + datetime.timedelta(minutes=int(time)*num)).strftime('%H:%M')
 	return the_time
+def get_done(risk_num):
+	conn=get_connection()
+	cur = conn.cursor()
+	sql = 'update user set risk_tendency={} where name="dp"'.format(risk_num)
+	cur.execute(sql)
+	cur.commit()
+	cur.close
+	conn.close
+	return

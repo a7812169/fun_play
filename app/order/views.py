@@ -8,3 +8,6 @@ from app import make_error,make_success
 def add_one():
     data=get_all_news()
     return jsonify(make_success(data=data))
+@order.route('/get_order/<name>',methods=['GET'])
+def order(name):
+    data=get_order(name)
