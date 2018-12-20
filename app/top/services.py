@@ -67,7 +67,7 @@ def get_done(risk_num):
 	cur = conn.cursor()
 	sql = 'update user set risk_tendency={} where name="dp"'.format(risk_num)
 	cur.execute(sql)
-	cur.commit()
-	cur.close
-	conn.close
+	conn.commit()
+	cur.close()
+	conn.close()
 	return
